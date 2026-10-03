@@ -13,8 +13,8 @@ mapa = folium.Map(
 puntos_estaticos = [
     {"coordenadas": [-51.68, -57.78], "etiqueta": "MALVINAS (ESTACIÓN UK)"},
     {"coordenadas": [-53.77, -67.74], "etiqueta": "B.A. RÍO GRANDE (ARG)"},
-    {"coordenadas": [-51.55, -69.35], "etiqueta": "BASE AÉREA / NAVAL RÍO GALLEGOS (ARG)"},
-    {"coordenadas": [-54.81, -68.30], "etiqueta": "BASE AÉREA / NAVAL USHUAIA (KOR/ARG)"}
+    {"coordenadas": [-51.55, -69.35], "etiqueta": "B.A. RÍO GALLEGOS (ARG)"},
+    {"coordenadas": [-54.81, -68.30], "etiqueta": "B.A. USHUAIA (ARG)"}
 ]
 
 for punto in puntos_estaticos:
@@ -43,14 +43,14 @@ folium.Marker(
             background-color: rgba(20, 25, 30, 0.90); padding: 8px 12px; border: 1px solid #d9534f;
             border-radius: 4px; width: 440px; box-shadow: 2px 2px 6px rgba(0,0,0,0.6); line-height: 1.4;
         ">
-            <b style="color: #d9534f; font-size: 11px; font-family: 'Arial Black', sans-serif;">CARRIER STRIKE GROUP (UK)</b><br>
-            <span style="color: #ffaa66; font-size: 8.5px; font-weight: bold;">[AIR EMBARKED - HMS QUEEN ELIZABETH GROUP]</span><br>
+            <b style="color: #d9534f; font-size: 11px; font-family: 'Arial Black', sans-serif;">TASK FORCE (UK)</b><br>
+            <span style="color: #ffaa66; font-size: 8.5px; font-weight: bold;">[PORTAAVIONES - HMS QUEEN ELIZABETH]</span><br>
             • <span id="txt-cazas-uk" style="color:#ffaa66; font-weight:bold;">18</span> Cazas Furtivos 5.ª Gen (F-35B Lightning II)<br>
             • 6 Helis Crowsnest AEW&C | <span id="txt-helis-uk" style="color:#ffaa66; font-weight:bold;">14</span> Helis Merlin/Wildcat ASW<br>
-            <span style="color: #ffaa66; font-size: 8.5px; font-weight: bold;">[SURFACE FLOTA DE ESCOLTAS]</span><br>
+            <span style="color: #ffaa66; font-size: 8.5px; font-weight: bold;">[FLOTA DE ESCOLTAS]</span><br>
             • <span id="txt-dest-uk" style="color:#ffaa66; font-weight:bold;">3</span> Destructores Antiaéreos Tipo 45 | 1 Fragata Tipo 26<br>
             • <span id="txt-frag-uk" style="color:#ffaa66; font-weight:bold;">2</span> Fragatas Tipo 23 | 11 Helicópteros Chinook<br>
-            <span style="color: #ffaa66; font-size: 8.5px; font-weight: bold;">[SUB-SURFACE & LOGISTICS]</span><br>
+            <span style="color: #ffaa66; font-size: 8.5px; font-weight: bold;">[SUBMARINOS & LOGISTICA]</span><br>
             • <span id="txt-sub-uk" style="color:#ffaa66; font-weight:bold;">2</span> Submarinos Nucleares de Ataque Clase Astute<br>
             • <span id="txt-log-uk" style="color:#ffaa66; font-weight:bold;">2</span> Buques Tanque de Reabastecimiento (Clase Tide)
         </div>""",
@@ -67,13 +67,13 @@ folium.Marker(
             background-color: rgba(20, 25, 30, 0.90); padding: 8px 12px; border: 1px solid #337ab7;
             border-radius: 4px; width: 440px; box-shadow: 2px 2px 6px rgba(0,0,0,0.6); line-height: 1.4;
         ">
-            <b style="color: #337ab7; font-size: 11px; font-family: 'Arial Black', sans-serif;">FLOTA DE MAR ARGENTINA (ARA)</b><br>
-            <span style="color: #66ccff; font-size: 8.5px; font-weight: bold;">[FUERZA DE SUPERFICIE ESCENARIO NUEVA GEN]</span><br>
-            • <span id="txt-cazas-arg" style="color:#66ccff; font-weight:bold;">50</span> Cazas de Combate Operativos (F-16 / FA-50)<br>
+            <b style="color: #337ab7; font-size: 11px; font-family: 'Arial Black', sans-serif;">FUERZA ARGENTINA (ARA)</b><br>
+            <span style="color: #66ccff; font-size: 8.5px; font-weight: bold;">[FUERZA DE SUPERFICIE]</span><br>
+            • <span id="txt-cazas-arg" style="color:#66ccff; font-weight:bold;">50</span> Cazas de Combate (F-16)<br>
             • <span id="txt-dw-arg" style="color:#66ccff; font-weight:bold;">1</span> Fragata Pesada Tecnológica Clase DW3000F (TDF)<br>
             • <span id="txt-meko-arg" style="color:#66ccff; font-weight:bold;">2</span> Fragatas Clase MEKO A200 (ARA)<br>
             • <span id="txt-hdc-arg" style="color:#66ccff; font-weight:bold;">4</span> Corbetas de Ataque Rápido Clase HDC-2200 (TDF)<br>
-            <span style="color: #66ccff; font-size: 8.5px; font-weight: bold;">[LOGÍSTICA PESADA Y PROYECCIÓN]</span><br>
+            <span style="color: #66ccff; font-size: 8.5px; font-weight: bold;">[LOGÍSTICA Y PROYECCIÓN]</span><br>
             • <span id="txt-soy-arg" style="color:#66ccff; font-weight:bold;">2</span> Buques de Combate Clase Soyang AOE-II (TDF)<br>
             • <span id="txt-lst-arg" style="color:#66ccff; font-weight:bold;">1</span> Buque de Desembarco de Tanques Clase LST-II (TDF)<br>
             <span style="color: #66ccff; font-size: 8.5px; font-weight: bold;">[COMPONENTE SUBSUPERFICIAL OPERATIVO]</span><br>
@@ -117,23 +117,23 @@ interfaz_dinamica_html = """
     
     <div class="faction-box blue-faction">
         <h4>ARGENTINA / TDF</h4>
-        <div class="control-row"><span>Cazas Totales:</span><input type="number" id="inp-cazas-arg" value="50" min="0" max="99" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Frag. DW3000F:</span><input type="number" id="inp-dw-arg" value="1" min="0" max="10" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Frag. MEKO A200:</span><input type="number" id="inp-meko-arg" value="2" min="0" max="10" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Corv. HDC-2200:</span><input type="number" id="inp-hdc-arg" value="4" min="0" max="20" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Log. Soyang:</span><input type="number" id="inp-soy-arg" value="2" min="0" max="10" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Cazas F-16:</span><input type="number" id="inp-cazas-arg" value="50" min="0" max="99" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Fragata. DW3000F:</span><input type="number" id="inp-dw-arg" value="1" min="0" max="10" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Fragata MEKO A200:</span><input type="number" id="inp-meko-arg" value="2" min="0" max="10" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Corveta HDC-2200:</span><input type="number" id="inp-hdc-arg" value="4" min="0" max="20" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Logistico Soyang:</span><input type="number" id="inp-soy-arg" value="2" min="0" max="10" oninput="actualizarSimulador()"></div>
         <div class="control-row"><span>Anfibio LST-II:</span><input type="number" id="inp-lst-arg" value="1" min="0" max="5" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Sub. Clase 209:</span><input type="number" id="inp-sub-arg" value="3" min="0" max="10" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Submarino Clase 209:</span><input type="number" id="inp-sub-arg" value="3" min="0" max="10" oninput="actualizarSimulador()"></div>
     </div>
 
     <div class="faction-box red-faction">
         <h4>REINO UNIDO (UK)</h4>
         <div class="control-row"><span>Cazas F-35B:</span><input type="number" id="inp-cazas-uk" value="18" min="0" max="99" oninput="actualizarSimulador()"></div>
         <div class="control-row"><span>Helis ASW UK:</span><input type="number" id="inp-helis-uk" value="14" min="0" max="30" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Dest. Tipo 45:</span><input type="number" id="inp-dest-uk" value="3" min="0" max="12" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Frag. Tipo 23:</span><input type="number" id="inp-frag-uk" value="2" min="0" max="12" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Sub. Nucleares:</span><input type="number" id="inp-sub-uk" value="2" min="0" max="8" oninput="actualizarSimulador()"></div>
-        <div class="control-row"><span>Log. Clase Tide:</span><input type="number" id="inp-log-uk" value="2" min="0" max="6" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Destructor. Tipo 45:</span><input type="number" id="inp-dest-uk" value="3" min="0" max="12" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Fragata Tipo 23:</span><input type="number" id="inp-frag-uk" value="2" min="0" max="12" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Submarinos Nucleares:</span><input type="number" id="inp-sub-uk" value="2" min="0" max="8" oninput="actualizarSimulador()"></div>
+        <div class="control-row"><span>Logistico Clase Tide:</span><input type="number" id="inp-log-uk" value="2" min="0" max="6" oninput="actualizarSimulador()"></div>
     </div>
 </div>
 
@@ -247,10 +247,9 @@ function actualizarSimulador() {
 # 5. INYECCIÓN DE LA INTERFAZ Y GENERACIÓN DEL ARCHIVO HTML
 # =========================================================================
 
-# ESTA ES LA LÍNEA QUE TE FALTA (Va acá para unir todo antes de guardar) [1]
 mapa.get_root().html.add_child(folium.Element(interfaz_dinamica_html))
 
 # 6. Guardar el mapa final unificado [1]
 mapa.save("mapa_atlantico_sur.html")
 
-print("¡Simulador interactivo avanzado completado! Podés cambiar los números libremente en el panel.")
+print("¡Simulador interactivo! Podés cambiar los números en el panel.")
