@@ -6,7 +6,7 @@
 
 Al iniciar el mapa, la interfaz despliega los bloques infográficos directamente sobre el océano y una barra superior de balance de poder predictivo, optimizada para un análisis de situación inmediato.
 
-![Teatro de Operaciones Estratégicas](Screenshoot_27.png)
+![Teatro de Operaciones Estratégicas](Screenshot_27.png)
 
 ---
 
