@@ -31,8 +31,7 @@ Al iniciar el mapa, la interfaz despliega los bloques infográficos directamente
 
 1. **Clonar el repositorio** o descargar el script `escenario.py`:
    ```bash
-   [git clone https://github.com/ZeusOneRG/simulador_malv/]
-   cd TU_REPOSITORIO
+   git clone https://github.com/ZeusOneRG/simulador_malv/
    ```
 
 2. **Instalar los requisitos previos** desde la terminal:
